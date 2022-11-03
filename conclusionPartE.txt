@@ -1,0 +1,9 @@
+I tested 8 different arrays.
+I had array sizes of 10, 100, 1000, and 10000
+For each size, one array was almost sorted, and one array was randomly sorted
+The quicksort algorithm performed exponentially better than mergesort on array sizes 100 and less
+Once the array sizes became 1000 and more, mergesort started to outperform quicksort
+Also, as the size of the array increases, the almost sorted array was much slower than the random array
+This has to do with the almost sorted array being one of the worst cases, as there is a lot of wasted comparisions
+In conclusion, if array sizes are less than 1000, use quicksort
+Otherwise, use mergesort, as it is more consistient when the number of inputs increase
