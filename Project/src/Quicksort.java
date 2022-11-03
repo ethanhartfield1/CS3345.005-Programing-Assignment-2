@@ -5,7 +5,7 @@
  */
 
 
-public class Quicksort extends benchmarkTest{
+public class Quicksort{
     /**
      * The swap method is a utility function that swaps two elements
      * In the same array
@@ -73,8 +73,8 @@ public class Quicksort extends benchmarkTest{
      */
     public static void quicksort(int arr[], int l, int r){
         int size = r-l+1;
-        if(size<=3)
-            manualSort(arr, l, r);
+        if(size<=15)
+            insertionSort(arr, l, r);
         else{
             int m = medianof3(arr, l, r);
             int p = partition(arr, l, r, m);
@@ -83,30 +83,23 @@ public class Quicksort extends benchmarkTest{
         }
     }
     /**
-     * The manualSort method is used for when the array
-     * Only has 3 or less elements to sort
+     * The insertionSort method is used for when the array
+     * Only has 15 or less elements to sort
      * @param arr The array to sort
      * @param l The leftmost index in the array
      * @param r The rightmost index in the array
      */
-    public static void manualSort(int[] arr, int l, int r){
-        int size = r-l+1;
-        if(size<=1)
-            return;
-        if(size==2){
-            if(arr[l]>arr[r])
-                swap(arr, l, r);
-            return;
-        }
-        else{
-            if(arr[l]>arr[r-1])
-                swap(arr, l, r-1);
-            if(arr[l]>arr[r])
-                swap(arr, l, r);
-            if(arr[r-1]>arr[r])
-                swap(arr, r-1, r);
+    public static void insertionSort(int[] arr, int l, int r){
+        for(int i = 1; i <= r; i++){
+            int key = arr[i];
+            int j = i-1;
+
+            while(j >= 0 && arr[j] > key){
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
         }
     }
-
 }
 

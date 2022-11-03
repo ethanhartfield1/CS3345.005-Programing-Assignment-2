@@ -4,10 +4,10 @@
  * 10/26/2022
  */
 
-public class Mergesort extends benchmarkTest{
+public class Mergesort{
     /**
      * The merge method merges two subarrays of arr[]
-     * @param arr[] The array to be merged
+     * @param arr The array to be merged
      * @param l The leftmost index of the array
      * @param m The middle index of the array
      * @param r The rightmost index of the array
@@ -53,7 +53,7 @@ public class Mergesort extends benchmarkTest{
     /**
      * The mergesort method is the main function that sorts the array
      * Sorts by recurvise calling, while calling the merge method at the end
-     * @param arr[] The array to be sorted
+     * @param arr The array to be sorted
      * @param l The leftmost element in the array
      * @param r The rightmost element in the array
      */
